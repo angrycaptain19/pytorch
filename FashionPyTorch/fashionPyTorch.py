@@ -1,7 +1,7 @@
 # imports
 # python 3.7.3
 # torch 1.7.1
-# torchviison .0.8.2
+# torchvision .0.8.2
 # matplotlib 3.3.3
 # numpy 1.19.5
 # opencv-python 4.5.1
@@ -45,7 +45,7 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         ### Inputs to Conv2d: Incoming layers, outgoing layers, Frame size
-        # Then Stride, Padding
+        # Then Stride, Padding as keywords
         self.conv1 = nn.Conv2d(1, 6, 5)
 
         self.conv2 = nn.Conv2d(6, 12, 5)
