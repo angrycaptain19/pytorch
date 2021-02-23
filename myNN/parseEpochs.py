@@ -9,7 +9,7 @@ ap.add_argument('-f', '--file', required=True,
     help="Filename of text file with epoch data in it.")
 args = vars(ap.parse_args())
 
-def parseFile (filename):
+def parseFile(filename):
     with open(filename, 'r') as inputFile:
         epochLosses = []
         trainingAccuracies = []
@@ -30,9 +30,7 @@ def parseFile (filename):
                 correct = float(line.split()[1])
                 outOf = float(line.split()[4])
                 validationAccuracies.append(correct/outOf)
-    epochTmp = []
-    for lossList in epochLosses:
-        epochTmp.append(mean(lossList))
+    epochTmp = [mean(lossList) for lossList in epochLosses]
     epochLosses = epochTmp
     return epochLosses, trainingAccuracies, validationAccuracies
 
